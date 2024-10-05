@@ -78,7 +78,7 @@ POST http://miapi.com.pe/users
 ## PIP
 
 ```sh
-pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv
+pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins
 ```
 
 ## .env

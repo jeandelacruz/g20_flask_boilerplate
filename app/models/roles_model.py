@@ -1,8 +1,8 @@
-from app import db
+from app.models import BaseModel
 from sqlalchemy import Column, Integer, String, Boolean
 
 
-class RoleModel(db.Model):  # role_model
+class RoleModel(BaseModel):  # role_model
     __tablename__ = 'roles'
 
     id = Column(Integer, autoincrement=True, primary_key=True)
