@@ -35,14 +35,14 @@
 4. CRUD para cada Tabla
    - [] Listado con paginación
    - [] Obtener un registro por ID
-   - [] Creación de un registro
+   - [X] Creación de un registro
    - [] Actualzación de un registro por ID
    - [] Eliminar un registro por ID (Soft Delete)
 5. Decoderadores
    - [] Proteger las rutas por autenticación
    - [] Proteger las rutas por rol
 6. Documentación
-   - [] Swagger OpenAPI
+   - [X] Swagger OpenAPI
 7. Despliegue
    - [] Render (PAAS)
 

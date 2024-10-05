@@ -1,4 +1,5 @@
 from app import api
+from flask import request
 from flask_restx import Resource
 from app.controllers.roles_controller import RoleController
 
@@ -22,11 +23,12 @@ class RolesListCreate(Resource):
     def get(self):
         ''' Listar todos los roles '''
         controller = RoleController()
-        return controller.all()
+        return controller.fetch_all()
 
     def post(self):
         ''' Creacion de un rol '''
-        return 'Creación de rol'
+        controller = RoleController()
+        return controller.save(request.json)
 
 
 '''
