@@ -96,3 +96,23 @@ DATABASE_URI='postgresql://username:password@ip_server:port/database_name'
 
 - FlaskRestX
   - [Swagger](https://flask-restx.readthedocs.io/en/latest/swagger.html)
+
+## Migraciones
+
+- Iniciar alembic (se ejecuta una sola vez, solo si no existe una carpeta **migrations**)
+
+```ssh
+flask db init
+```
+
+- Generar una migración (cuando se crea o se modifica un modelo, se debe ejecutar el comando)
+
+```ssh
+flask db migrate -m "comentario"
+```
+
+- Ejecutar migraciones
+
+```ssh
+flask db upgrade
+```
