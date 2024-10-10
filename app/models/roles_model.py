@@ -8,10 +8,3 @@ class RoleModel(BaseModel):  # role_model
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(30))
     status = Column(Boolean, default=True)
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'status': self.status
-        }

@@ -1,4 +1,6 @@
 from flask_restx import fields
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
+from app.models.roles_model import RoleModel
 
 
 class RoleRequestSchema:
@@ -9,3 +11,8 @@ class RoleRequestSchema:
         return self.namespace.model('Role Create', {
             'name': fields.String(required=True, min_length=3, max_length=30)
         })
+
+
+class RoleResponseSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = RoleModel

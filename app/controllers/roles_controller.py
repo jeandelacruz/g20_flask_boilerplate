@@ -1,5 +1,6 @@
 from app import db
 from app.models.roles_model import RoleModel
+from app.schemas.roles_schema import RoleResponseSchema
 from http import HTTPStatus
 
 
@@ -7,14 +8,13 @@ class RoleController:
     def __init__(self):
         self.db = db
         self.model = RoleModel
+        self.schema = RoleResponseSchema
 
     def fetch_all(self):
         records = self.model.all()
-        roles = []
-        for record in records:
-            roles.append(record.to_dict())
+        roles = self.schema(many=True)
         return {
-            'records': roles
+            'records': roles.dump(records)
         }, HTTPStatus.OK
 
     def save(self, body):
