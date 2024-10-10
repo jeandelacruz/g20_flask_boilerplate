@@ -2,12 +2,15 @@ from app import api
 from flask import request
 from flask_restx import Resource
 from app.controllers.roles_controller import RoleController
+from app.schemas.roles_schema import RoleRequestSchema
 
 role_ns = api.namespace(
     name='Roles',
     description='Endpoints del modulo Roles',
     path='/roles'
 )
+
+schema_request = RoleRequestSchema(role_ns)
 
 
 # CRUD
@@ -25,6 +28,7 @@ class RolesListCreate(Resource):
         controller = RoleController()
         return controller.fetch_all()
 
+    @role_ns.expect(schema_request.create(), validate=True)
     def post(self):
         ''' Creacion de un rol '''
         controller = RoleController()

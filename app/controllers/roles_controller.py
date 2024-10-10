@@ -12,7 +12,7 @@ class RoleController:
         records = self.model.all()
         roles = []
         for record in records:
-            roles.append(record.to_json())
+            roles.append(record.to_dict())
         return {
             'records': roles
         }, HTTPStatus.OK

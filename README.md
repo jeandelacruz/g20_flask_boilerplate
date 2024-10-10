@@ -94,7 +94,12 @@ DATABASE_URI='postgresql://username:password@ip_server:port/database_name'
 
 ## Documentación
 
+- SQLAlchemy
+  - [Metodos](https://docs.sqlalchemy.org/en/14/orm/query.html#sqlalchemy.orm.Query.all)
+  - [Tipo de Datos](https://docs.sqlalchemy.org/en/14/core/types.html)
+  - [Metodos Optimos](https://github.com/absent1706/sqlalchemy-mixins/blob/master/README.md)
 - FlaskRestX
+  - [Campos Esquema (Validaciones)](https://flask-restx.readthedocs.io/en/latest/_modules/flask_restx/fields.html)
   - [Swagger](https://flask-restx.readthedocs.io/en/latest/swagger.html)
 
 ## Migraciones
