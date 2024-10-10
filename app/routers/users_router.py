@@ -2,6 +2,7 @@ from app import api
 from flask import request
 from flask_restx import Resource
 from app.controllers.users_controller import UserController
+from app.schemas.users_schema import UserRequestSchema
 
 
 user_ns = api.namespace(
@@ -9,6 +10,8 @@ user_ns = api.namespace(
     description='Endpoints del modulo Users',
     path='/users'
 )
+
+request_schema = UserRequestSchema(user_ns)
 
 
 @user_ns.route('')
@@ -18,9 +21,11 @@ class UsersListCreate(Resource):
         controller = UserController()
         return controller.fetch_all()
 
+    @user_ns.expect(request_schema.create(), validate=True)
     def post(self):
         ''' Creacion de un usuario '''
-        pass
+        controller = UserController()
+        return controller.save(request.json)
 
 
 @user_ns.route('/<int:id>')
