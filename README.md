@@ -34,10 +34,10 @@
    - [] Enviar un correo con la contraseña nueva, en un template (HTML)
 4. CRUD para cada Tabla
    - [] Listado con paginación
-   - [] Obtener un registro por ID
+   - [X] Obtener un registro por ID
    - [X] Creación de un registro
-   - [] Actualzación de un registro por ID
-   - [] Eliminar un registro por ID (Soft Delete)
+   - [X] Actualzación de un registro por ID
+   - [X] Eliminar un registro por ID (Soft Delete)
 5. Decoderadores
    - [] Proteger las rutas por autenticación
    - [] Proteger las rutas por rol
