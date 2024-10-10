@@ -40,3 +40,22 @@ class RolesListCreate(Resource):
 4. Actualizar un registro por el ID - /roles/path_params | PUT / PATCH
 5. Eliminar un registro por el ID - /roles/path_params | DELETE
 '''
+
+
+@role_ns.route('/<int:id>')
+class RolesGetUpdateDelete(Resource):
+    def get(self, id):
+        ''' Obtener un rol por su id '''
+        controller = RoleController()
+        return controller.find_by_id(id)
+
+    @role_ns.expect(schema_request.update(), validate=True)
+    def patch(self, id):
+        ''' Actualizar un rol por su id '''
+        controller = RoleController()
+        return controller.update(id, request.json)
+
+    def delete(self, id):
+        ''' Eliminar un rol por su id '''
+        controller = RoleController()
+        return controller.remove(id)

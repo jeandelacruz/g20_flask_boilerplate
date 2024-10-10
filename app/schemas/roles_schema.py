@@ -12,6 +12,11 @@ class RoleRequestSchema:
             'name': fields.String(required=True, min_length=3, max_length=30)
         })
 
+    def update(self):
+        return self.namespace.model('Role Update', {
+            'name': fields.String(min_length=3, max_length=30)
+        })
+
 
 class RoleResponseSchema(SQLAlchemyAutoSchema):
     class Meta:
