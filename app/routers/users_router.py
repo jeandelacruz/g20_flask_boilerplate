@@ -32,7 +32,8 @@ class UsersListCreate(Resource):
 class UsersGetUpdateDelete(Resource):
     def get(self, id):
         ''' Obtener un usuario por su id '''
-        pass
+        controller = UserController()
+        return controller.find_by_id(id)
 
     def patch(self, id):
         ''' Actualizar un usuario por su id '''

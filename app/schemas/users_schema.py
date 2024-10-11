@@ -1,4 +1,7 @@
 from flask_restx import fields
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
+from marshmallow.fields import Nested
+from app.models.users_model import UserModel
 
 
 class UserRequestSchema:
@@ -14,3 +17,12 @@ class UserRequestSchema:
             'email': fields.String(required=True, min_length=3, max_length=160),
             'rol_id': fields.Integer(required=True)
         })
+
+
+class UserResponseSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = UserModel
+        exclude = ['password']
+        include_fk = True
+
+    role = Nested('RoleResponseSchema', many=False)
