@@ -18,6 +18,15 @@ class UserRequestSchema:
             'rol_id': fields.Integer(required=True)
         })
 
+    def update(self):
+        return self.namespace.model('User Update', {
+            'name': fields.String(required=False, min_length=3, max_length=120),
+            'last_name': fields.String(required=False, min_length=3, max_length=150),
+            'username': fields.String(required=False, min_length=3, max_length=80),
+            'email': fields.String(required=False, min_length=3, max_length=160),
+            'rol_id': fields.Integer(required=False)
+        })
+
 
 class UserResponseSchema(SQLAlchemyAutoSchema):
     class Meta:

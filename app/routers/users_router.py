@@ -35,10 +35,13 @@ class UsersGetUpdateDelete(Resource):
         controller = UserController()
         return controller.find_by_id(id)
 
+    @user_ns.expect(request_schema.update(), validate=True)
     def patch(self, id):
         ''' Actualizar un usuario por su id '''
-        pass
+        controller = UserController()
+        return controller.update(id, request.json)
 
     def delete(self, id):
         ''' Eliminar un usuario por su id '''
-        pass
+        controller = UserController()
+        return controller.remove(id)

@@ -49,7 +49,47 @@ class UserController:
             }, HTTPStatus.INTERNAL_SERVER_ERROR
 
     def update(self, id, body):
-        pass
+        try:
+            record = self.model.where(id=id, status=True).first()
+
+            if record:
+                record.update(**body)
+                self.db.session.add(record)
+                self.db.session.commit()
+
+                return {
+                    'message': f'El Usuario {id}, ha sido actualizado.'
+                }, HTTPStatus.OK
+
+            return {
+                'message': f'No se encontro el Usuario {id}'
+            }, HTTPStatus.NOT_FOUND
+        except Exception as e:
+            self.db.session.rollback()
+            return {
+                'message': 'Ocurrio un error',
+                'reason': str(e)
+            }, HTTPStatus.INTERNAL_SERVER_ERROR
 
     def remove(self, id):
-        pass
+        try:
+            record = self.model.where(id=id, status=True).first()
+
+            if record:
+                record.update(status=False)
+                self.db.session.add(record)
+                self.db.session.commit()
+
+                return {
+                    'message': f'El Usuario {id}, ha sido removido.'
+                }, HTTPStatus.OK
+
+            return {
+                'message': f'No se encontro el Usuario {id}'
+            }, HTTPStatus.NOT_FOUND
+        except Exception as e:
+            self.db.session.rollback()
+            return {
+                'message': 'Ocurrio un error',
+                'reason': str(e)
+            }, HTTPStatus.INTERNAL_SERVER_ERROR
