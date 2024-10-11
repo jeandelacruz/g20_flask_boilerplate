@@ -10,8 +10,42 @@ class UserController:
         self.model = UserModel
         self.schema = UserResponseSchema
 
-    def fetch_all(self):
-        pass
+    def fetch_all(self, query_params):
+        try:
+            # Paginación
+            # Nro Pagina (a acceder)
+            # Nro Registros x Pagina
+            # Formula para Offset : ((nº pagina - 1) * nro de registros x pagina)
+            '''
+                Total 100 usuarios
+                Pagina 1:
+                SELECT * FROM users LIMIT 10 OFFSET 0;
+
+                Pagina 2:
+                SELECT * FROM users LIMIT 10 OFFSET 10;
+            '''
+            page = query_params['page']
+            per_page = query_params['per_page']
+
+            records = self.model.where(status=True).order_by('id').paginate(
+                page=page,
+                per_page=per_page
+            )
+            users = self.schema(many=True)
+            return {
+                'results': users.dump(records.items),
+                'pagination': {
+                    'totalRecords': records.total,
+                    'totalPages': records.pages,
+                    'perPage': records.per_page,
+                    'currentPage': records.page
+                }
+            }, HTTPStatus.OK
+        except Exception as e:
+            return {
+                'message': 'Ocurrio un error',
+                'reason': str(e)
+            }, HTTPStatus.INTERNAL_SERVER_ERROR
 
     def save(self, body):
         try:

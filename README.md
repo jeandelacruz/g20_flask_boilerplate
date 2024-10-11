@@ -33,7 +33,7 @@
 3. Reseteo Contraseña
    - [] Enviar un correo con la contraseña nueva, en un template (HTML)
 4. CRUD para cada Tabla
-   - [] Listado con paginación
+   - [X] Listado con paginación
    - [X] Obtener un registro por ID
    - [X] Creación de un registro
    - [X] Actualzación de un registro por ID
