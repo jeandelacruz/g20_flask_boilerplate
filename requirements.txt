@@ -1,6 +1,7 @@
 alembic==1.13.3
 aniso8601==9.0.1
 attrs==24.2.0
+bcrypt==4.2.0
 blinker==1.8.2
 click==8.1.7
 colorama==0.4.6

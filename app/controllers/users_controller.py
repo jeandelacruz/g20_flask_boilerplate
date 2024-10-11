@@ -14,6 +14,7 @@ class UserController:
     def save(self, body):
         try:
             record_new = self.model.create(**body)
+            record_new.hash_password()
             self.db.session.add(record_new)
             self.db.session.commit()
             return {

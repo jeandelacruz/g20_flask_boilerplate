@@ -29,7 +29,7 @@
    - [] Integrar JWT
    - [] Validar el hash de las contraseñas
 2. Registro
-   - [] Encriptacion Contraseñas (bcrypt)
+   - [X] Encriptacion Contraseñas (bcrypt)
 3. Reseteo Contraseña
    - [] Enviar un correo con la contraseña nueva, en un template (HTML)
 4. CRUD para cada Tabla
@@ -78,7 +78,7 @@ POST http://miapi.com.pe/users
 ## PIP
 
 ```sh
-pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate
+pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate marshmallow-sqlalchemy bcrypt
 ```
 
 ## .env
