@@ -26,8 +26,8 @@
 ## Caracteristicas
 
 1. Login
-   - [] Integrar JWT
-   - [] Validar el hash de las contraseñas
+   - [X] Integrar JWT
+   - [X] Validar el hash de las contraseñas
 2. Registro
    - [X] Encriptacion Contraseñas (bcrypt)
 3. Reseteo Contraseña
@@ -39,7 +39,7 @@
    - [X] Actualzación de un registro por ID
    - [X] Eliminar un registro por ID (Soft Delete)
 5. Decoderadores
-   - [] Proteger las rutas por autenticación
+   - [X] Proteger las rutas por autenticación
    - [] Proteger las rutas por rol
 6. Documentación
    - [X] Swagger OpenAPI
