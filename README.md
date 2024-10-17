@@ -78,7 +78,7 @@ POST http://miapi.com.pe/users
 ## PIP
 
 ```sh
-pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate marshmallow-sqlalchemy bcrypt
+pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate marshmallow-sqlalchemy bcrypt flask-jwt-extended
 ```
 
 ## .env
@@ -100,6 +100,8 @@ DATABASE_URI='postgresql://username:password@ip_server:port/database_name'
   - [Metodos Optimos](https://github.com/absent1706/sqlalchemy-mixins/blob/master/README.md)
 - FlaskRestX
   - [Campos Esquema (Validaciones)](https://flask-restx.readthedocs.io/en/latest/_modules/flask_restx/fields.html)
+  - [Response](https://flask-restx.readthedocs.io/en/latest/marshalling.html)
+  - [Request Parser](https://flask-restx.readthedocs.io/en/latest/parsing.html)
   - [Swagger](https://flask-restx.readthedocs.io/en/latest/swagger.html)
 
 ## Migraciones
