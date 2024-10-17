@@ -32,3 +32,12 @@ class AuthRefreshToken(Resource):
         identity = get_jwt_identity()
         controller = AuthController()
         return controller.refresh_token(identity)
+
+
+@auth_ns.route('/password/reset')
+class AuthPasswordReset(Resource):
+    @auth_ns.expect(request_schema.password_reset(), validate=True)
+    def post(self):
+        ''' Reinicio de contraseña del usuario '''
+        controller = AuthController()
+        return controller.password_reset(request.json)

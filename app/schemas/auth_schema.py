@@ -17,3 +17,8 @@ class AuthRequestSchema:
         parser.add_argument('Authorization', type=str,
                             location='headers', help='Ex: Bearer {token}')
         return parser
+
+    def password_reset(self):
+        return self.namespace.model('Auth Password Reset', {
+            'email': fields.String(required=True)
+        })
