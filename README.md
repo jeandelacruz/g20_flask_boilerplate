@@ -31,7 +31,7 @@
 2. Registro
    - [X] Encriptacion Contraseñas (bcrypt)
 3. Reseteo Contraseña
-   - [] Enviar un correo con la contraseña nueva, en un template (HTML)
+   - [X] Enviar un correo con la contraseña nueva, en un template (HTML)
 4. CRUD para cada Tabla
    - [X] Listado con paginación
    - [X] Obtener un registro por ID
