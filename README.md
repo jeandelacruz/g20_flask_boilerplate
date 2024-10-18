@@ -78,7 +78,7 @@ POST http://miapi.com.pe/users
 ## PIP
 
 ```sh
-pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate marshmallow-sqlalchemy bcrypt flask-jwt-extended
+pip install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv sqlalchemy_mixins Flask-Migrate marshmallow-sqlalchemy bcrypt flask-jwt-extended Flask-Mail
 ```
 
 ## .env
@@ -90,6 +90,14 @@ FLASK_RUN_PORT=5000
 FLASK_DEBUG=True
 
 DATABASE_URI='postgresql://username:password@ip_server:port/database_name'
+
+SECRET_KEY='tecsup'
+
+MAIL_SERVER='smtp.gmail.com'
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME='@gmail.com'
+MAIL_PASSWORD=''
 ```
 
 ## Documentación
@@ -103,6 +111,8 @@ DATABASE_URI='postgresql://username:password@ip_server:port/database_name'
   - [Response](https://flask-restx.readthedocs.io/en/latest/marshalling.html)
   - [Request Parser](https://flask-restx.readthedocs.io/en/latest/parsing.html)
   - [Swagger](https://flask-restx.readthedocs.io/en/latest/swagger.html)
+- FlaskJWTExtended
+  - [Protección de Rutas](https://flask-jwt-extended.readthedocs.io/en/stable/optional_endpoints.html)
 
 ## Migraciones
 
