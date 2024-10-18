@@ -16,5 +16,7 @@ class BaseConfig:
     MAIL_PASSWORD = getenv('MAIL_PASSWORD')
     MAIL_DEBUG = False
 
+    PROPAGATE_EXCEPTIONS = True
+
 
 environment = BaseConfig()
